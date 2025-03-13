@@ -56,14 +56,29 @@ button:hover {
     background-color: #FFA500;
 }
 
-/* Fullscreen Image (Centered & Full Width) */
+/* Timer Dropdown */
+label {
+    font-size: 18px;
+    color: white;
+}
+
+select {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #FFD700;
+    border: none;
+    cursor: pointer;
+}
+
+/* Fullscreen Image */
 .fullscreen-img {
-    width: 100vw;  /* Stretch to full screen width */
-    height: auto; /* Adjust height automatically */
-    max-height: 80vh; /* Prevents excessive height */
-    object-fit: contain; /* Ensures the image fills the width properly */
+    width: 100vw;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
     display: block;
-    margin: auto; /* Centers the image horizontally */
+    margin: auto;
 }
 
 /* Countdown Timer (Fixed at Bottom, Always Visible) */
@@ -81,7 +96,7 @@ button:hover {
     width: fit-content;
 }
 
-/* Close Button (Top Right) */
+/* Close Button */
 .close-btn {
     position: absolute;
     top: 10px;
