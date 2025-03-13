@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>View Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script>
         let timeLeft = 300; // Start countdown at 5 minutes (300 seconds)
@@ -13,7 +14,7 @@
                 let minutes = Math.floor(timeLeft / 60);
                 let seconds = timeLeft % 60;
                 let formattedTime = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-                document.getElementById("countdown").innerText = "Time Left: " + formattedTime;
+                document.getElementById("countdown").innerText = formattedTime;
                 timeLeft--;
                 setTimeout(updateCountdown, 1000);
             }
@@ -23,7 +24,7 @@
 </head>
 <body>
     <div class="close-btn" onclick="window.location.href='/'">✖</div>
-    <img src="{{ image_src }}" alt="Reference Image">
-    <div id="countdown"></div>
+    <img src="{{ image_src }}" alt="Reference Image" class="fullscreen-img">  <!-- Fullscreen Image -->
+    <div id="countdown"></div>  <!-- Timer below image -->
 </body>
 </html>
