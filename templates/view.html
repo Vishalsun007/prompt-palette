@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        let timeLeft = 300; // Start countdown at 5 minutes (300 seconds)
+
+        function updateCountdown() {
+            if (timeLeft <= 0) {
+                window.location.href = "/";
+            } else {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                let formattedTime = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                document.getElementById("countdown").innerText = "Time Left: " + formattedTime;
+                timeLeft--;
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        window.onload = updateCountdown;
+    </script>
+</head>
+<body>
+    <div class="close-btn" onclick="window.location.href='/'">✖</div>
+    <img src="{{ image_src }}" alt="Reference Image">
+    <div id="countdown"></div>
+</body>
+</html>
